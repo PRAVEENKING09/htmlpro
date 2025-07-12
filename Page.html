@@ -29,3 +29,42 @@
 </div>
 </body>
 </html>
+
+document.addEventListener('DOMContentLoaded', () => {
+    const registrationFormSection = document.getElementById('registrationFormSection');
+    const registrationForm = document.getElementById('registrationForm');
+    const displaySection = document.getElementById('displaySection');
+    const displayName = document.getElementById('displayName');
+    const displayEmail = document.getElementById('displayEmail');
+    const resetButton = document.getElementById('resetButton');
+
+    registrationForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission (page reload)
+
+        // Get form values
+        const name = document.getElementById('regName').value;
+        const email = document.getElementById('regEmail').value;
+        // Password is not displayed for security reasons, but you'd handle it on a server
+
+        // Populate display section
+        displayName.textContent = name;
+        displayEmail.textContent = email;
+
+        // Hide the form section
+        registrationFormSection.classList.add('hidden');
+
+        // Show the display section
+        displaySection.classList.remove('hidden');
+
+        // Optionally, clear the form fields after submission
+        registrationForm.reset();
+    });
+
+    resetButton.addEventListener('click', () => {
+        // Hide the display section
+        displaySection.classList.add('hidden');
+
+        // Show the form section
+        registrationFormSection.classList.remove('hidden');
+    });
+});
