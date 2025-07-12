@@ -31,40 +31,39 @@
 </html>
 
 document.addEventListener('DOMContentLoaded', () => {
-    const registrationFormSection = document.getElementById('registrationFormSection');
-    const registrationForm = document.getElementById('registrationForm');
-    const displaySection = document.getElementById('displaySection');
-    const displayName = document.getElementById('displayName');
-    const displayEmail = document.getElementById('displayEmail');
-    const resetButton = document.getElementById('resetButton');
+  const registrationFormSection = document.getElementById('RegistrationFormSection');
+  const registrationForm = document.getElementById('RegistrationForm');
+  const displaySection = document.getElementById('DisplaySection');
+  const displayName = document.getElementById('displayname');
+  const displayEmail = document.getElementById('displayemail');
+  const resetButton = document.getElementById('ResetButton');
 
-    registrationForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission (page reload)
+  registrationForm.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
 
-        // Get form values
-        const name = document.getElementById('regName').value;
-        const email = document.getElementById('regEmail').value;
-        // Password is not displayed for security reasons, but you'd handle it on a server
+    // Get form values
+    const name = document.getElementById('Regname').value;
+    const email = document.getElementById('Regemail').value;
 
-        // Populate display section
-        displayName.textContent = name;
-        displayEmail.textContent = email;
+    // Populate display section
+    displayName.textContent = name;
+    displayEmail.textContent = email;
 
-        // Hide the form section
-        registrationFormSection.classList.add('hidden');
+    // Hide the form section
+    registrationFormSection.classList.add('hidden');
 
-        // Show the display section
-        displaySection.classList.remove('hidden');
+    // Show the display section
+    displaySection.classList.remove('hidden');
 
-        // Optionally, clear the form fields after submission
-        registrationForm.reset();
-    });
+    // Optionally, clear the form fields after submission
+    registrationForm.reset();
+  });
 
-    resetButton.addEventListener('click', () => {
-        // Hide the display section
-        displaySection.classList.add('hidden');
+  resetButton.addEventListener('click', () => {
+    // Hide the display section
+    displaySection.classList.add('hidden');
 
-        // Show the form section
-        registrationFormSection.classList.remove('hidden');
-    });
+    // Show the form section
+    registrationFormSection.classList.remove('hidden');
+  });
 });
